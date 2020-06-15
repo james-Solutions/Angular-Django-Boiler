@@ -1,1 +1,57 @@
-<p>register-screen works!</p>
+<div>
+  <h1>Enter your information to register</h1>
+  <div [hidden]="!this.errorMessage">
+    {{errorMessage}}
+  </div>
+  <form (ngSubmit)="register()">
+    <div>
+      <h2>Your Info</h2>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"
+             required
+             [(ngModel)]="newUser.email"/>
+    </div>
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName"
+             required
+             [(ngModel)]="newUser.firstName"/>
+    </div>
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName"
+             required
+             [(ngModel)]="newUser.lastName"/>
+    </div>
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city"
+             required
+             [(ngModel)]="newUser.city"/>
+    </div>
+    <div>
+      <label for="color">Favorite Color:</label>
+      <input type="text" id="color" name="color"
+             required
+             [(ngModel)]="newUser.color"/>
+    </div>
+    <div>
+      <h2>Enter a Password</h2>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"
+             required
+             [(ngModel)]="newUser.password"/>
+    </div>
+    <div>
+      <label for="passwordVerify">Verify:</label>
+      <input type="password" id="passwordVerify" name="passwordVerify"
+             required
+             [(ngModel)]="passwordVerify"/>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+</div>
